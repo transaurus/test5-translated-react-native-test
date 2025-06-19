@@ -1,0 +1,86 @@
+---
+id: imagebackground
+title: ImageBackground
+---
+
+A common feature request from developers familiar with the web is `background-image`. To handle this use case, you can use the `<ImageBackground>` component, which has the same props as `<Image>`, and add whatever children to it you would like to layer on top of it.
+
+由於實作較為基礎，某些情況下您可能不想使用 `<ImageBackground>`。如需更深入瞭解，請參考 `<ImageBackground>` 的[原始碼](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Image/ImageBackground.js)，必要時可自行建立客製化元件。
+
+請注意必須指定寬度和高度的樣式屬性。
+
+## 範例
+
+```SnackPlayer name=ImageBackground
+import React from 'react';
+import {ImageBackground, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+
+const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
+
+const App = () => (
+  <SafeAreaProvider>
+    <SafeAreaView style={styles.container} edges={['left', 'right']}>
+      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+        <Text style={styles.text}>Inside</Text>
+      </ImageBackground>
+    </SafeAreaView>
+  </SafeAreaProvider>
+);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  text: {
+    color: 'white',
+    fontSize: 42,
+    lineHeight: 84,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: '#000000c0',
+  },
+});
+
+export default App;
+```
+
+---
+
+# 參考文獻
+
+## 屬性
+
+### [Image 屬性](image.md#props)
+
+繼承 [Image 屬性](image.md#props)。
+
+---
+
+### `imageStyle`
+
+| Type                                |
+| ----------------------------------- |
+| [Image Style](image-style-props.md) |
+
+---
+
+### `imageRef`
+
+允許設定內部 `Image` 元件的參照
+
+| Type                                                  |
+| ----------------------------------------------------- |
+| [Ref](https://reactjs.org/docs/refs-and-the-dom.html) |
+
+---
+
+### `style`
+
+| Type                              |
+| --------------------------------- |
+| [View Style](view-style-props.md) |

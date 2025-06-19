@@ -1,0 +1,92 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "architecture/fabric-renderer.md",
+  "source_file_content_hash": "41ae3b7b253e22e21775a9efe7f5f67083155abe5745b9287c6acb0500539116",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: fabric-renderer\ntitle: Fabric\n---",
+      "source_content_hash": "a0d9e1a16f0920b42c11a799dd822d57823668a37e291c047506b5e48808e89d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "Fabric is React Native's new rendering system, a conceptual evolution of the legacy render system. The core principles are to unify more render logic in C++, improve interoperability with [host platforms](architecture-glossary.md#host-platform), and to unlock new capabilities for React Native. Development began in 2018 and in 2021, React Native in the Facebook app is backed by the new renderer.",
+      "source_content_hash": "c436675bec42841ff22511b8b553a53ab44d80c9b93a60cfc1721ae3a0c13d33",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Fabric 是 React Native 的新渲染系統，是傳統渲染系統的概念演進。其核心原則在於將更多渲染邏輯統一至 C++、提升與[宿主平台](architecture-glossary.md#host-platform)的互通性，並為 React Native 解鎖新功能。開發始於 2018 年，2021 年起 Facebook 應用程式中的 React Native 已由新渲染器驅動。"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "This documentation provides an overview of the [new renderer](architecture-glossary.md#fabric-render) and its concepts. It avoids platform specifics and doesn’t contain any code snippets or pointers. This documentation covers key concepts, motivation, benefits, and an overview of the render pipeline in different scenarios.",
+      "source_content_hash": "0eb2c1606ab81a1dfb0044b3e081ba0f353dd81b6995f56dc9be20a8122beee0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本文件提供[新渲染器](architecture-glossary.md#fabric-render)及其概念的概覽。內容避免平台特定細節，不含程式碼片段或指引。涵蓋關鍵概念、動機、優勢，以及不同情境下的渲染管線綜覽。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Motivations and Benefits of the new renderer",
+      "source_content_hash": "0176ef7a181d49931d220adaa8d8d1799202a623556be07bda934474ee94d995",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 新渲染器的動機與優勢"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "The render architecture was created to unlock better user experiences that weren’t possible with the legacy architecture. Some examples include:",
+      "source_content_hash": "cc4179b39a3ca4fa8314f31a4ec05c0a71811ed2adfcb7fba7383121ee3acc42",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "此渲染架構旨在實現傳統架構無法達成的更佳使用者體驗，例如："
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "- With improved interoperability between [host views](architecture-glossary.md#host-view-tree-and-host-view) and React views, the renderer is able to measure and render React surfaces synchronously. In the legacy architecture, React Native layout was asynchronous which led to a layout “jump” issue when embedding a React Native rendered view in a _host view_.\n- With support of multi-priority and synchronous events, the renderer can prioritize certain user interactions to ensure they are handled in a timely manner.\n- [Integration with React Suspense](https://reactjs.org/blog/2019/11/06/building-great-user-experiences-with-concurrent-mode-and-suspense.html) which allows for more intuitive design of data fetching in React apps.\n- Enable React [Concurrent Features](https://github.com/reactwg/react-18/discussions/4) on React Native.\n- Easier to implement server side rendering for React Native.",
+      "source_content_hash": "08669b372c61f2537cae574d5c0ccfc54660d63b18d01782f1aea11537828c3e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- With improved interoperability between [host views](architecture-glossary.md#host-view-tree-and-host-view) and React views, the renderer is able to measure and render React surfaces synchronously. In the legacy architecture, React Native layout was asynchronous which led to a layout “jump” issue when embedding a React Native rendered view in a _host view_.\n- With support of multi-priority and synchronous events, the renderer can prioritize certain user interactions to ensure they are handled in a timely manner.\n- [Integration with React Suspense](https://reactjs.org/blog/2019/11/06/building-great-user-experiences-with-concurrent-mode-and-suspense.html) which allows for more intuitive design of data fetching in React apps.\n- Enable React [Concurrent Features](https://github.com/reactwg/react-18/discussions/4) on React Native.\n- Easier to implement server side rendering for React Native."
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "The new architecture also provides benefits in code quality, performance, and extensibility:",
+      "source_content_hash": "73ec8b4d991853cb7be68235069fa46bb086080411bb5a9037fe9699b69d6858",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "新架構在程式碼品質、效能與擴展性上也帶來優勢："
+      }
+    },
+    {
+      "segment_id": "da23c906",
+      "source_content": "- **Type safety:** code generation to ensure type safety across the JS and [host platforms](architecture-glossary.md#host-platform). The code generation uses JavaScript component declarations as source of truth to generate C++ structs to hold the props. Mismatch between JavaScript and host component props triggers a build error.\n- **Shared C++ core**: the renderer is implemented in C++ and the core is shared among platforms. This increases consistency and makes it easier to adopt React Native on new platforms.\n- **Better Host Platform Interoperability**: Synchronous and thread-safe layout calculation improves user experiences when embedding host components into React Native, which means easier integration with host platform frameworks that require synchronous APIs.\n- **Improved Performance**: With the new cross-platform implementation of the renderer system, every platform benefits from performance improvements that may have been motivated by limitations of one platform. For example, view flattening was originally a performance solution for Android and is now provided by default on both Android and iOS.\n- **Consistency**: The new render system is cross-platform, it is easier to keep consistency among different platforms.\n- **Faster Startup**: Host components are lazily initialized by default.\n- **Less serialization of data between JS and host platform**: React used to transfer data between JavaScript and _host platform_ as serialized JSON. The new renderer improves the transfer of data by accessing JavaScript values directly using [JavaScript Interfaces (JSI)](architecture-glossary.md#javascript-interfaces-jsi).",
+      "source_content_hash": "3bebe84e64acd72030d2024b69fcc231410c70926a9cd2e59eb9cb0565e3bde3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **Type safety:** code generation to ensure type safety across the JS and [host platforms](architecture-glossary.md#host-platform). The code generation uses JavaScript component declarations as source of truth to generate C++ structs to hold the props. Mismatch between JavaScript and host component props triggers a build error.\n- **Shared C++ core**: the renderer is implemented in C++ and the core is shared among platforms. This increases consistency and makes it easier to adopt React Native on new platforms.\n- **Better Host Platform Interoperability**: Synchronous and thread-safe layout calculation improves user experiences when embedding host components into React Native, which means easier integration with host platform frameworks that require synchronous APIs.\n- **Improved Performance**: With the new cross-platform implementation of the renderer system, every platform benefits from performance improvements that may have been motivated by limitations of one platform. For example, view flattening was originally a performance solution for Android and is now provided by default on both Android and iOS.\n- **Consistency**: The new render system is cross-platform, it is easier to keep consistency among different platforms.\n- **Faster Startup**: Host components are lazily initialized by default.\n- **Less serialization of data between JS and host platform**: React used to transfer data between JavaScript and _host platform_ as serialized JSON. The new renderer improves the transfer of data by accessing JavaScript values directly using [JavaScript Interfaces (JSI)](architecture-glossary.md#javascript-interfaces-jsi)."
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs-architecture/current/fabric-renderer.md",
+  "last_updated_timestamp": "2025-06-19T15:33:39.541940+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "41ae3b7b253e22e21775a9efe7f5f67083155abe5745b9287c6acb0500539116"
+  }
+}

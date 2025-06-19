@@ -1,0 +1,472 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2025-02-03-react-native-core-contributor-summit-2024.md",
+  "source_file_content_hash": "bc6908505787039b0f4deaf5984dc1a14035b04d86fdba529700ab450a146f8e",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: 'React Native Core Contributor Summit 2024 Recap'\nauthors: [thymikee, szymonrybczak, mojavad, stmoy]\nimage: https://raw.githubusercontent.com/facebook/react-native-website/9915d9c0b32ef348958c8119f6e83e571c1c0ba3/website/static/blog/assets/react-native-core-contributor-summit-2024-1.jpeg\ntags: [engineering]\ndate: 2025-02-03\n---",
+      "source_content_hash": "cc11109fea246dfd73c58fdc56a9f43674aeb624eef552a4cee035828999b0f6",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Every year, the core contributors in the React Native Community get together with the React Native team to collaboratively shape the direction of this project.",
+      "source_content_hash": "36837efd687d4878459a3b79147ef9e14c580ede7f6f82d7d532449276c0e954",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "每年，React Native 社群的核心貢獻者都會與 React Native 團隊齊聚一堂，共同規劃這個專案的發展方向。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Last year was no different—with small exception. We usually meet a day before [React Universe Conf](https://www.reactuniverseconf.com) (formerly React Native EU) at [Callstack](https://www.callstack.com/open-source) HQ in Wrocław. In 2024, learning from past experiences, we hosted the Summit for two consecutive days, so that we can have more unstructured time together.",
+      "source_content_hash": "000590e9abd130aef75797349cfb831d264cc644e49634c09eced3e4178f21ec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "去年也不例外——只有一個小變化。我們通常會在 [React Universe Conf](https://www.reactuniverseconf.com)（前身為 React Native EU）前一天於 [Callstack](https://www.callstack.com/open-source) 位於弗羅茨瓦夫的總部舉行會議。2024 年，我們從過往經驗中學習，將峰會延長為連續兩天，以便有更多非結構化的交流時間。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "![all-participants](/blog/assets/react-native-core-contributor-summit-2024-1.jpeg)",
+      "source_content_hash": "febcceaf2521982f7bfd0be9061461887b87577d9ac439417496319840651f25",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![all-participants](/blog/assets/react-native-core-contributor-summit-2024-1.jpeg)"
+      }
+    },
+    {
+      "segment_id": "28a64196",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_28a64196"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "This annual tradition has become a valuable opportunity for contributors to share insights and voice their concerns, and for the core team to share their plans and gather feedback from key contributors to the React Native ecosystem—including partner companies, individual library authors and friends.",
+      "source_content_hash": "6e057991f0f19aa9fbfb0cb2adbb933578c02d468c21a5144912485f0d30c226",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這項年度傳統已成為貢獻者分享見解、表達關切的寶貴機會，同時也讓核心團隊能分享計畫並收集來自 React Native 生態系關鍵貢獻者的反饋——包括合作企業、獨立函式庫作者與夥伴們。"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "We divided the Summit into two tracks covering following topics:",
+      "source_content_hash": "c5d1e3482cee8802e09f6ec2877ff050eeafefd4207ff5b45a4035b5e669e8b7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們將峰會分為兩大議程軌，涵蓋以下主題："
+      }
+    },
+    {
+      "segment_id": "0787cf7f",
+      "source_content": "- [Releases](#releases)\n- [What's next after the New Architecture?](#whats-next-after-the-new-architecture)\n- [Web APIs spec for Native Modules](#web-apis-for-native-modules)\n- [LeanCore 2.0](#leancore-20)\n- [Nitro Modules - Unblocking View Components by exposing props as jsi::Values](#nitro-modules---unblocking-view-components-by-exposing-props-as-jsivalues)\n- [Out Of Tree Platforms & CocoaPods](#out-of-tree-platforms--cocoapods)\n- [React Native on Desktop](#react-native-on-desktop)",
+      "source_content_hash": "2a86e6ec6457784b290febb07c52615c603586d9712308cc5d228afdf5e51b5d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- [版本發布](#releases)\n- [新架構之後的下一步？](#whats-next-after-the-new-architecture)\n- [原生模組的 Web API 規範](#web-apis-for-native-modules)\n- [LeanCore 2.0](#leancore-20)\n- [Nitro 模組 - 透過將 props 暴露為 jsi::Value 來解除視圖元件限制](#nitro-modules---unblocking-view-components-by-exposing-props-as-jsivalues)\n- [樹外平台與 CocoaPods](#out-of-tree-platforms--cocoapods)\n- [桌面端的 React Native](#react-native-on-desktop)"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "In this blog post, we’d like to give you a sneak peek of the results of this gathering.",
+      "source_content_hash": "03a5eace3f6da4b0f78d815f5ffab389cc1bafc8808d3e84e46f62b1fe028526",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在這篇部落格中，我們想讓您先睹為快這次聚會的成果。"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "## Releases",
+      "source_content_hash": "a3ae3f562039ab096087240fd8bcc74a03805cc0cc216b66684e051a67ef1b5a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 版本發布"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "We had an extensive discussion about the release process for React Native. Core Team appreciates the value of having contributors from outside Meta involved in releases and emphasizes the importance of having nightly releases, which are particularly beneficial for Out-of-Tree platforms like React Native visionOS, library maintainers (Reanimated) and frameworks (Expo). We discussed the frequency of releases, with some folks asking for more frequent releases to ship fixes faster, while others expressed concerns about the impact on 3rd party libraries and upgrading efforts.",
+      "source_content_hash": "f253d339be11e591094cecbba76be464ec95c1862dce481bc0ce708d27138ff5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們針對 React Native 的發布流程進行了深入討論。核心團隊認同讓 Meta 外部貢獻者參與版本發布的價值，並強調每日構建（nightly releases）的重要性——這對樹外平台（如 React Native visionOS）、函式庫維護者（Reanimated）和框架（Expo）特別有益。我們討論了發布頻率，部分與會者希望加快發布節奏以更快推送修復，其他人則對第三方函式庫的影響與升級成本表示擔憂。"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "We also brainstormed ways to reduce unintentional breaking changes and improve communication about compatibility between React Native and 3rd party dependencies.",
+      "source_content_hash": "839bb920bf4e396cd54e0fe177dab608dd2cb559687d7a064432bad4fc16b5a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們也集思廣益如何減少非預期的破壞性變更，並改善 React Native 與第三方依賴套件相容性的溝通。"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "This session showed how complex it is to manage releases for React Native, and how delicate this topic is, given all the different parts of the ecosystem that need to be considered.",
+      "source_content_hash": "84789050a39c4681ad876d70ab4af5f38d48ad2985a237877ce7bc54c5610b76",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這場會議顯示了管理 React Native 版本發布的複雜性，以及這個議題的敏感性——畢竟需要考量生態系中所有不同的環節。"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "## What's next after the New Architecture?",
+      "source_content_hash": "979ae5c825f7ab37157affba8a231266f1a3ff51723c63fde882096fd02ed6f9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 新架構之後的下一步？"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "Now that the New Architecture has shipped as stable, we discussed what we should focus on next. What could be the next big thing? The topics revolved around:",
+      "source_content_hash": "b14f481df5801e9169014051cc775e093f1251cbee18fbc641e1c718f06e6d8a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在新架構已穩定發布的此刻，我們討論了接下來該聚焦的方向。下一個重大里程碑可能是什麼？討論圍繞以下主題展開："
+      }
+    },
+    {
+      "segment_id": "bdfae007",
+      "source_content": "- **Web compatibility** – concluded in the discussion around direction of the React Strict DOM project, which should be treated as a temporary polyfill, while the Xplat team implements proper cross-platform functionality into the core of React Native.\n- **Stabilizing the core API** – turned out we need more consensus on what this means for app developers, library authors, Out-of-Tree platforms. E.g. it may be necessary to extract platform-native logic for iOS and Android from the shared C++ codebase. Part of which was covered by the LeanCore 2.0 discussion.\n- **Old architecture support** – as expected, the team confirmed that new React 19 features based on concurrent rendering, won’t work in old architecture. New features are primarily targeted for the new architecture. Due to blockers in React 19 release schedule it’s still not clear where to draw the line between functionality supported by both new and old architecture.\n- **3rd party libraries for React Native** – today we library authors can use TurboModules, ExpoModules, recently NitroModules to achieve the same goal of bridging native platform functionality. We need better documentation on how to make it well.\n- **Brownfield docs** – at the time of the summit, the official documentation for integrating React Native into native apps was quite dated. Since then the team has followed through with up-to-date and simpler docs for Android and iOS.\n- **Tree-shaking for Metro web** – core Metro team is open to merge the work from the Expo team in this area.",
+      "source_content_hash": "d6c87d023c190bd12b9492499865b25fd57203e9bf392bd0df07c7ce55874669",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- **網頁相容性** - 討論圍繞著 React Strict DOM 專案的方向，該專案應被視為暫時性的 polyfill，同時 Xplat 團隊將在 React Native 核心中實現適當的跨平台功能。\n- **穩定核心 API** - 我們發現需要更多共識來釐清這對應用程式開發者、函式庫作者和樹外平台意味著什麼。例如可能需要從共享的 C++ 程式碼庫中提取 iOS 和 Android 的平台原生邏輯。這部分內容與 LeanCore 2.0 的討論有所重疊。\n- **舊架構支援** - 正如預期，團隊確認基於並行渲染的 React 19 新功能將無法在舊架構中運作。新功能主要針對新架構設計。由於 React 19 發布時程的阻礙，目前尚不清楚新舊架構之間的功能支持界線應劃在何處。\n- **React Native 第三方函式庫** - 現今函式庫作者可以使用 TurboModules、ExpoModules，以及最近的 NitroModules 來實現橋接原生平台功能的相同目標。我們需要更好的文件來說明如何完善這項工作。\n- **Brownfield 文件** - 在峰會舉行時，官方關於將 React Native 整合到原生應用中的文件已相當過時。此後團隊已跟進發布了更新且更簡潔的 Android 和 iOS 文件。\n- **Metro web 的 Tree-shaking** - 核心 Metro 團隊願意合併 Expo 團隊在這方面的工作。"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "## Web APIs for Native Modules",
+      "source_content_hash": "fa2e32786f7b5c0b431acea7802d91c6ed96dae32185a1f71ef3cd69c191ccf0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 原生模組的 Web API"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "This session was dedicated to Microsoft's RFC revolving around the idea of bringing a subset of Web APIs to React Native. It aims to enhance React Native’s scalability and attract more web developers by leveraging familiar APIs. Opening access to a wealth of existing open-source web libraries that don't have explicit React Native support.",
+      "source_content_hash": "eb4a7217bcd1eba4ba01568a05f1ec2f344ae0585e2ad57bb2ed7d412ab7d148",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "本場會議專注於微軟提出的 RFC，其核心思想是將 Web API 的子集引入 React Native。這旨在通過利用熟悉的 API 來增強 React Native 的可擴展性並吸引更多網頁開發者，從而開放大量現有開源網頁函式庫的使用，這些函式庫目前沒有明確的 React Native 支持。"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "![web-apis](/blog/assets/react-native-core-contributor-summit-2024-2.jpeg)",
+      "source_content_hash": "147d7c96b26759276935af0e9e8b2bd14cd27fdc71c7f2bf4113b1b9f1ed94ce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![web-apis](/blog/assets/react-native-core-contributor-summit-2024-2.jpeg)"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Standardizing on Web API specifications is not only beneficial but also essential for React Native growth, and aligns well with our Many Platforms vision and react-strict-dom project. The web offers a unified interface through its specifications, which React Native community modules currently lack. Microsoft has identified around 200 essential Web APIs that could be implemented first for platforms they support: iOS, Android, Windows and macOS.",
+      "source_content_hash": "0d22197d119d67c908696cbb206647864e01b801a581188a47eb83c4448d7920",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "基於 Web API 規範進行標準化不僅有益，而且對 React Native 的成長至關重要，這與我們的「多平台」願景和 react-strict-dom 專案高度契合。網頁通過其規範提供了一個統一的介面，而這正是 React Native 社群模組目前所缺乏的。微軟已識別出約 200 個基本的 Web API，可優先為他們支持的平台實現：iOS、Android、Windows 和 macOS。"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "We encourage library developers to align their APIs with web specifications whenever possible, as this standardization will improve code portability and developer experience across platforms.",
+      "source_content_hash": "42ad48a9c8959aea9f3c909667af02ff568cdef2b23ce39cdfc3e63db85f8c7d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們鼓勵函式庫開發者在可能的情況下使其 API 與網頁規範保持一致，這種標準化將提升跨平台程式碼的可攜性和開發者體驗。"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "While the proposal seems beneficial for the future of React Native, we're still brainstorming the next steps forward. One concern we noticed is governance of the APIs, and whether they’d need to live in a separate repository from the platform implementations. Another around diverging from the official specification in case a specific platform allows for behaviors not specified by the W3C. We would need to figure out how to avoid bundling unnecessary modules, e.g. with a Babel plugin. Not to mention the scope of such initiative is quite large.",
+      "source_content_hash": "f3e29e8b2926fcbeabf53bb7bec03d29eb6d5e5d21eca6becc5ef66dd8731542",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "雖然這項提案對 React Native 的未來看似有益，但我們仍在集思廣益下一步該如何推進。我們注意到的一個問題是 API 的治理，以及它們是否需要與平台實現分開存放在不同的儲存庫中。另一個問題是當特定平台允許不符合 W3C 規範的行為時，該如何處理與官方規範的分歧。我們需要找出方法來避免捆綁不必要的模組，例如通過 Babel 插件。更不用說這項計劃的範圍相當龐大。"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "The session conclusion reinforced two key points: First, there is strong alignment across the React Native community on adopting web-compatible specifications where possible. Second, we need to establish a clear technical strategy for how these Web API implementations can be maintained separately for different platforms. Microsoft together with Callstack could work on refining the original RFC and produce a proof of concept implementation for a smaller number of APIs as a community initiative. This incremental approach will help us validate the design and developer experience before expanding the scope.",
+      "source_content_hash": "29c87010edc51ec5ee0648b0afa301f7b27d75add0b5adbeccb505339676cf84",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "會議結論強化了兩個關鍵點：首先，React Native 社群在可能的情況下採用網頁相容規範方面有強烈共識。其次，我們需要為這些 Web API 實現建立清晰的技術策略，說明如何針對不同平台分別維護。微軟與 Callstack 可以合作完善原始 RFC，並作為社群倡議為少量 API 製作概念驗證實現。這種漸進式方法將幫助我們在擴大範圍前驗證設計和開發者體驗。"
+      }
+    },
+    {
+      "segment_id": "c315c636",
+      "source_content": "## LeanCore 2.0",
+      "source_content_hash": "025d59dfd6c8d4b6ea5633cc539b525dd482eef509f125e44ffba5169aa14111",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## LeanCore 2.0"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "In 2019, the React Native team started the Lean Core initiative. The goal was to tackle the surface area of React Native’s core and reduce APIs and components that were outdated and legacy. Since then, the React Native components and API surfaces have been long overdue another round of clean up.",
+      "source_content_hash": "7d6d9f6527f2ff16898527dba252e9d484284ea4b5508d86e32ae106e317c229",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "2019 年，React Native 團隊啟動了 LeanCore 計劃，目標是處理 React Native 核心的覆蓋範圍，減少過時和遺留的 API 與元件。自那時起，React Native 的元件和 API 覆蓋範圍早已需要另一輪清理。"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "Today, there are many components that are not actively being maintained with better community alternatives. Additionally, there are components that have duplicates that should eventually be consolidated for maintainability.",
+      "source_content_hash": "9b0ad7088b09941f9aefe7ad11e94cd95cdfcc25bd7ce4c4ced6936c980dac17",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "現今有許多元件沒有積極維護，且有更好的社群替代方案。此外，有些元件存在重複，最終應進行整合以提高可維護性。"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "On the API side, a lot of the JS layer APIs are tied to native iOS & Android implementations, rather than being truly platform agnostic. For example, with Pressable, we have props like `android_disableSound` and `android_ripple`. Ideally, React Native components should have the smallest possible API surface that is not tied to any specific platform.",
+      "source_content_hash": "25118d5d100c97133a13599345b306274f1fbdfdd06f51d4a106f73da0366e6e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在 API 方面，許多 JS 層 API 與原生 iOS 和 Android 實現綁定，而非真正的平台無關。例如 Pressable 有像 `android_disableSound` 和 `android_ripple` 這樣的屬性。理想情況下，React Native 元件應具有最小的 API 覆蓋範圍，且不與任何特定平台綁定。"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "As Out-of-Tree platforms are growing and being adopted more by the ecosystem, there needs to be a path to reduce the component and API surface of React Native core, reducing the load on the React Native core team, and also making it significantly easier for Out-of-Tree platform & library maintainers to stay up-to-date.",
+      "source_content_hash": "7f3ac8b32b1f8bc668934cb3282c6f9d3f075c9a7916f06902e23611a3aab8d5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "隨著樹外平台（Out-of-Tree platforms）的成長並被生態系更多採用，需要有一條途徑來減少 React Native 核心的元件與 API 表面積，減輕 React Native 核心團隊的負擔，同時讓樹外平台與函式庫維護者能更容易跟上最新進展。"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "As an added bonus, this would make it easier for beginner app developers to pick up React Native, as there are less duplicated components and \"gotchas\" for them to learn. Where there is a better community alternative, developers can be signposted and encouraged to use the community alternatives available.",
+      "source_content_hash": "a629efb12e3cbc7640b57a902a5914a1fcc940f6d46b85b6e007c45fdff6a8f4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "另一個好處是，這將使初學的應用程式開發者更容易上手 React Native，因為需要學習的重複元件和「陷阱」減少了。當有更好的社群替代方案時，可以引導開發者並鼓勵他們使用現有的社群替代方案。"
+      }
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "During the session, we discussed:",
+      "source_content_hash": "fa51607bb63453ce7e87d120f2d6a2cb738c7190c4e7f128e906d95f887effb0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在會議期間，我們討論了："
+      }
+    },
+    {
+      "segment_id": "6384b3d4",
+      "source_content": "- The high level motivations of Lean Core and the benefits to the parties involved (developers, library maintainers, Meta)\n- An aggregated view of what components are being used in some real-world production React Native apps\n- The criteria of what is a candidate to be removed from core\n- A clear action plan for executing Lean Core 2.0 with:\n  - The high-level process for deprecation\n  - Handling cases where Meta is using components internally that have better community alternatives,",
+      "source_content_hash": "aa5d505e0a46d545c4decd0c490bd66f7a0747b5c57e92c78d9a0fea072d10b8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- Lean Core 的高層次動機以及對相關各方（開發者、函式庫維護者、Meta）的好處\n- 一些真實生產環境中 React Native 應用所使用的元件彙總視圖\n- 判斷哪些候選項目應從核心中移除的標準\n- 執行 Lean Core 2.0 的明確行動計劃，包括：\n  - 棄用的高層次流程\n  - 處理 Meta 內部使用但已有更好社群替代方案的元件的情況"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "As a next step, a group of the core contributors will look at collecting more telemetry and data, assessing community alternatives, and putting together an RFC detailing the proposed changes.",
+      "source_content_hash": "6ba0015afcd60acf1ef7c5605abbc6be10a29a0931a3a06596107dc9fa3df2fa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "作為下一步，一群核心貢獻者將著手收集更多遙測數據、評估社群替代方案，並擬定一份 RFC 詳細說明提議的變更。"
+      }
+    },
+    {
+      "segment_id": "759d12dd",
+      "source_content": "## Nitro Modules - Unblocking View Components by exposing props as jsi::Values",
+      "source_content_hash": "4220ac0dc3138bdc54c832aae8462bbb1ed166244c076128572c0054b9c9352e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Nitro 模組 - 透過將 props 暴露為 jsi::Values 來解除視圖元件的阻塞"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "Recently, Marc Rousavy introduced Nitro Modules as an alternative approach to creating Native Modules. Nitro Modules utilize experimental C++ Swift Interop and incorporate a bunch of enhancements that can lead to improved performance in certain scenarios. However, during this session, we discussed the various trade-offs involved between Nitro Modules and existing TurboModules.",
+      "source_content_hash": "27140cf8418d5292be73968a2528dffc89a99e909b7e78b0b995f2af7cecc82b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "近期，Marc Rousavy 引入了 Nitro 模組作為創建原生模組的另一種方法。Nitro 模組利用了實驗性的 C++ Swift 互操作性，並整合了一系列增強功能，在某些情境下可帶來效能提升。然而，在此次會議中，我們討論了 Nitro 模組與現有 Turbo 模組之間的各種權衡取捨。"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "While Nitro Modules offer some performance benefits, they also have limitations and considerations that need to be addressed. For example, the use of experimental interop features might introduce complexity or compatibility issues that are not present in TurboModules. Our discussion focused on these trade-offs and the potential for upstreaming some of Nitro Modules' improvements into React Native Core, which could allow developers to benefit from more performant modules for everyone.",
+      "source_content_hash": "533a189d71a6396c4579930bce0cbda746369626df51910e295c1f9dc31904fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "雖然 Nitro 模組提供了一些效能優勢，但它們也有需要解決的限制和考量。例如，使用實驗性的互操作性功能可能會引入 Turbo 模組中不存在的複雜性或相容性問題。我們的討論聚焦於這些權衡取捨，以及將 Nitro 模組的部分改進上遊至 React Native 核心的可能性，這可能讓所有開發者都能受益於更高性能的模組。"
+      }
+    },
+    {
+      "segment_id": "39db08de",
+      "source_content": "## Out-of-Tree Platforms & CocoaPods",
+      "source_content_hash": "1e270635cae9ba96844027c97f44181c16e8a515688da8099040571766a9fb65",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 樹外平台與 CocoaPods"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "Out-of-Tree Platforms presents the full power of React Native, where we can share one JS codebase between different platforms running on our mobile devices, desktops or even on VR/XR devices. Creating such a platform currently isn’t the easiest process, actually there are no guidelines on how things should be created, developed and maintained. Also React Native Core in a way is tied to Android and iOS platforms. In the future we could aim for a scenario where all the platforms are treated equally and integrate with a C++/JS core through the same APIs.",
+      "source_content_hash": "f21e47c40f3ec2691563f8f033559ea90ceace57bd176329b6e15a7cceb987d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "樹外平台展現了 React Native 的完整能力，讓我們能在行動裝置、桌面甚至 VR/XR 裝置等不同平台上共享同一份 JS 程式碼庫。目前創建這樣的平台並非最簡單的過程，實際上並沒有關於應如何創建、開發和維護的指南。此外，React Native 核心在某種程度上仍與 Android 和 iOS 平台綁定。未來我們可以朝向所有平台被平等對待並透過相同 API 與 C++/JS 核心整合的目標邁進。"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "![oot-platforms](/blog/assets/react-native-core-contributor-summit-2024-3.jpeg)",
+      "source_content_hash": "fc824f402b1cd4e1987e4c577bac044a0b8e11b000033a06aac07b25bf9013cf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "![oot-platforms](/blog/assets/react-native-core-contributor-summit-2024-3.jpeg)"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "During this session maintainers of different platforms discussed what are the problems, what they struggle with and what should be the solution to unify the process of creating and maintaining new Out-of-Tree platforms.",
+      "source_content_hash": "9249e99b98375d7d72bc454dfc03cb151da7c076e7dc0f8fbf5257f3397f1456",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "在此次會議中，不同平台的維護者討論了他們面臨的問題、困難以及應如何統一創建和維護新樹外平台的流程。"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "Another aspect of this session was to discuss CocoaPods and future plans related to managing native dependencies. Recently the CocoaPods team announced that they’ve moved to maintenance mode and new major improvements or features won’t be shipped. There are various alternatives that could be used and during this session we discussed their pros and cons, and what migration would look like.",
+      "source_content_hash": "77708040ba80f3db659083d4f6c6ff42bfacbb0449c1d52582b1541bbe607068",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "會議的另一個面向是討論 CocoaPods 及與管理原生依賴相關的未來計劃。近期 CocoaPods 團隊宣布他們已進入維護模式，將不再發布重大的改進或新功能。會中我們討論了各種替代方案的優缺點，以及遷移可能面臨的情況。"
+      }
+    },
+    {
+      "segment_id": "94145a94",
+      "source_content": "## React Native on Desktop",
+      "source_content_hash": "3c6863e8f9c619c2a6e7c68977eb0464b459995c1b3c3e74be020318a37d7b4e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## 桌面端的 React Native"
+      }
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "Steven and Saad from Microsoft, maintainers of react-native-windows and react-native-macos, hosted a session to listen and gather feedback from contributors related to Desktop platforms. Topics discussed included exploring how to increase adoption of React Native for Desktop (such as having a dedicated workflow in Visual Studio, or exposing desktop as part of Nx), as well as how to support Expo, which is a continual pain point for more adoption.",
+      "source_content_hash": "17c061d213876fe2c3eebf9875fe1f830e1e72f03539a641ede95430fa8d0006",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "來自 Microsoft 的 Steven 和 Saad（react-native-windows 和 react-native-macos 的維護者）主持了一場會議，聽取並收集貢獻者關於桌面平台的意見。討論的主題包括如何提高 React Native 在桌面端的採用率（例如在 Visual Studio 中提供專用工作流程，或將桌面端作為 Nx 的一部分公開），以及如何支援 Expo（這一直是提高採用率的一大痛點）。"
+      }
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "There’s a big discrepancy in availability of community modules between macOS and Windows, largely due to the fact that iOS code is mostly compatible with macOS, while RNW needs bespoke implementations. While working on the New Architecture for React Native for Windows, the team sees potential in C++ modules allowing for even more code sharing across platforms which will hopefully ease the burden of targeting desktop platforms. It’s worth noting that on the community side Software Mansion is working on adding desktop support for their most popular modules, such as React Native Screens, Gesture Handler and Reanimated.",
+      "source_content_hash": "e34f05c3513665ebe9d8bd79d3160d1cc38ffc582e4703bfc9a51a389ed9e6e7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "macOS 與 Windows 在社群模組的可用性上存在顯著差異，主要原因在於 iOS 程式碼大多能與 macOS 相容，而 React Native for Windows (RNW) 則需要專門的實作。當團隊為 React Native for Windows 的新架構進行開發時，他們發現 C++ 模組具有潛力，能進一步實現跨平台程式碼共享，這有望減輕針對桌面平台的開發負擔。值得注意的是，在社群方面，Software Mansion 正致力於為其最受歡迎的模組（如 React Native Screens、Gesture Handler 和 Reanimated）添加桌面支援。"
+      }
+    },
+    {
+      "segment_id": "04837130",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "---"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "We’re still impressed by how spending several hours together for a couple of days resulted in so much knowledge-sharing and cross-pollination of ideas. During this summit, we planted the seeds for initiatives that will help us improve and re-shape the React Native ecosystem.",
+      "source_content_hash": "c2b2a4d621e7cb8e5363c7b27537e0f13bae6725917d726c08f46d085088a892",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們仍對短短幾天的密集交流所產生的知識共享與創意激盪感到驚嘆。在此次高峰會中，我們為多項倡議播下種子，這些倡議將協助我們改進並重塑 React Native 生態系。"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "If you’re interested in joining the development of React Native, make sure you join our open initiatives and read the [contribution guide](https://reactnative.dev/contributing/overview) we have on our website. We hope to meet you in person as well in the future!",
+      "source_content_hash": "2ad3986505ed125beff937989e34e186ab1abb36ab78b786de03a1c53fffda79",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "若您有意參與 React Native 的開發，請務必加入我們的開放倡議並閱讀官網上的[貢獻指南](https://reactnative.dev/contributing/overview)。期待未來也能與您線下相會！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2025-02-03-react-native-core-contributor-summit-2024.md",
+  "last_updated_timestamp": "2025-06-19T15:33:15.428043+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "bc6908505787039b0f4deaf5984dc1a14035b04d86fdba529700ab450a146f8e"
+  }
+}

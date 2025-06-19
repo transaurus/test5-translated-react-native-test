@@ -1,0 +1,252 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "versioned_docs/version-0.73/upgrading.md",
+  "source_file_content_hash": "055ba453b9ce98ddd43f300a5bc7a7ae705d46d99dab839ce4ff1aa909d815a0",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nid: upgrading\ntitle: Upgrading to new versions\n---",
+      "source_content_hash": "7f636ae43724b5dcc3477dde94b9c6ab71c38914f53661eee696ef4da2fb9cfe",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "4d1292be",
+      "source_content": "import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';",
+      "source_content_hash": "0aed60180598135363f970d0b23d8d7665430a4b05f703a572a064dbbca30b07",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_4d1292be"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Upgrading to new versions of React Native will give you access to more APIs, views, developer tools and other goodies. Upgrading requires a small amount of effort, but we try to make it straightforward for you.",
+      "source_content_hash": "0b30f9bead865bba09976bdc04011e7d5d0e7a087e6a1efcc3bcba67c6ae0b3b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "升級至新版本的 React Native 將讓您獲得更多 API、視圖、開發者工具和其他好處。升級需要一些努力，但我們盡量使其過程直觀簡單。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Expo projects",
+      "source_content_hash": "2989d3d470edf355c6336a093a6bd82f5b78f3ad6fe125b28ee35bd991c4143f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## Expo 專案"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Upgrading your Expo project to a new version of React Native requires updating the `react-native`, `react`, and `expo` package versions in your `package.json` file. Expo provides an `upgrade` command to handle upgrading these and any other known dependencies for you. See the [Upgrading Expo SDK Walkthrough](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/) for up-to-date information about upgrading your project.",
+      "source_content_hash": "b74c16470617819040d396a21e7a4da99393bf8d3aae04a5baca7a94241cb874",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "Upgrading your Expo project to a new version of React Native requires updating the `react-native`, `react`, and `expo` package versions in your `package.json` file. Expo provides an `upgrade` command to handle upgrading these and any other known dependencies for you. See the [Upgrading Expo SDK Walkthrough](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/) for up-to-date information about upgrading your project."
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## React Native projects",
+      "source_content_hash": "e5776fcd2fb1cf9234eb815082c1a10e1b245a24bb1bb4f8dfd15457e7dcc027",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "## React Native 專案"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Because typical React Native projects are essentially made up of an Android project, an iOS project, and a JavaScript project, upgrading can be rather tricky. The [Upgrade Helper](https://react-native-community.github.io/upgrade-helper/) is a web tool to help you out when upgrading your apps by providing the full set of changes happening between any two versions. It also shows comments on specific files to help understanding why that change is needed.",
+      "source_content_hash": "7a2d588ba290cacb1649c6436bc32c249904b36d10a1c16370adedb95e1980e6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "由於典型的 React Native 專案基本上由一個 Android 專案、一個 iOS 專案和一個 JavaScript 專案組成，升級可能會相當棘手。[Upgrade Helper](https://react-native-community.github.io/upgrade-helper/) 是一個網頁工具，可以幫助您在升級應用程式時提供兩個版本之間的所有變更。它還顯示特定檔案的註解，以幫助理解為什麼需要該變更。"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "### 1. Select the versions",
+      "source_content_hash": "48198f7b43ee3f158dad59728897d85e5c9156ae2900bb0fb13eba456ec2a4c9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 1. 選擇版本"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "You first need to select from and to which version you wish to upgrade, by default the latest major versions are selected. After selecting you can click the button \"Show me how to upgrade\".",
+      "source_content_hash": "3f00c2ebe39cde49014c59f878f4c3aa4b7afb1a9987af17772db7512b574eaf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "首先，您需要選擇要從哪個版本升級到哪個版本，預設情況下會選擇最新的主要版本。選擇後，您可以點擊「Show me how to upgrade」按鈕。"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "💡 Major updates will show a \"useful content\" section on the top with links to help you out when upgrading.",
+      "source_content_hash": "ac80550a878f990708d12ae9bc5425c214c26cc5fda6d5cd48883bf7a5ff8bf9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "💡 主要更新會在頂部顯示一個「useful content」區塊，其中包含升級時可能有幫助的連結。"
+      }
+    },
+    {
+      "segment_id": "6604338b",
+      "source_content": ":::tip\nOr you can run the `npx react-native upgrade`, which will automatically check your current version and the latest version available and will show you the link to the Upgrade Helper page with the versions already selected.\n:::",
+      "source_content_hash": "9fa507c625ff3998df737f54b35c09c5c906b3a4ee1fb1ed6504a5e76283a1aa",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "zh-hant": ":::tip\n或者，您可以執行 `npx react-native upgrade`，它會自動檢查您當前的版本和最新的可用版本，並顯示已選擇版本的 Upgrade Helper 頁面連結。\n:::"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "### 2. Upgrade dependencies",
+      "source_content_hash": "3a0195a594cc8e851468a361afa969b6f3d1da0e4b135107174165e60c1fdcf5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 2. 升級相依套件"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "The first file that is shown is the `package.json`, it's good to update the dependencies that are showing in there. For example, if `react-native` and `react` appears as changes then you can install it in your project by running following commands:",
+      "source_content_hash": "afc3b494a965b8b6fd5b5e780da2916392e13a88f2b334c6abfbecb4fec417d6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "第一個顯示的檔案是 `package.json`，建議更新其中顯示的相依套件。例如，如果 `react-native` 和 `react` 顯示為變更，則可以通過執行以下命令在您的專案中安裝它們："
+      }
+    },
+    {
+      "segment_id": "99d14dfd",
+      "source_content": "<Tabs groupId=\"package-manager\" queryString defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>\n<TabItem value=\"npm\">\n\n```shell\n# {{VERSION}} and {{REACT_VERSION}} are the release versions showing in the diff\nnpm install react-native@{{VERSION}}\nnpm install react@{{REACT_VERSION}}\n```\n\n</TabItem>\n<TabItem value=\"yarn\">\n\n```shell\n# {{VERSION}} and {{REACT_VERSION}} are the release versions showing in the diff\nyarn add react-native@{{VERSION}}\nyarn add react@{{REACT_VERSION}}\n```\n\n</TabItem>\n</Tabs>",
+      "source_content_hash": "f1e6f90f67d34199f5a920f2f8f02ab182ec47f7bb3e2e586d51c38f380a1960",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_99d14dfd"
+      }
+    },
+    {
+      "segment_id": "c6cc90a0",
+      "source_content": "### 3. Upgrade your project files",
+      "source_content_hash": "b938e02d7cbde86724855417e8c29bae5f40627f02276eb97299f32fea1b9581",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 3. 升級專案檔案"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "The new release may contain updates to other files that are generated when you run `npx react-native init`, those files are listed after the `package.json` in the Upgrade Helper page. If there aren't other changes then you only need to rebuild the project to continue developing.",
+      "source_content_hash": "4da1fa3a7f785ed51c3dc6c80f291ff7cc4b44ad6e84c67b6187b354d8e93c31",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "新版本可能包含對執行 `npx react-native init` 時生成的其他檔案的更新，這些檔案列在 Upgrade Helper 頁面的 `package.json` 之後。如果沒有其他變更，則只需重新建置專案即可繼續開發。"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "In case there are changes then you can either update them manually by copying and pasting from the changes in the page or you can do it with the React Native CLI upgrade command by running:",
+      "source_content_hash": "b98d828664c37453aea5526b55305775e7c63b2d8ce5d69ae3800b824c6f0633",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "如果有變更，您可以手動更新它們，從頁面中的變更複製並貼上，或者通過執行 React Native CLI 升級指令來完成："
+      }
+    },
+    {
+      "segment_id": "6d254e09",
+      "source_content": "```shell\nnpx react-native upgrade\n```",
+      "source_content_hash": "7c22ce38c7e27d85c8c64e24f6483fa4095766090a60899d86e580e6eca20d24",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_6d254e09"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "This will check your files against the latest template and perform the following:",
+      "source_content_hash": "212e1893c4ca777d9d1bfa61afeca06a81c62753cd3eaaf04055ddb48e0532f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這將根據最新模板檢查您的檔案並執行以下操作："
+      }
+    },
+    {
+      "segment_id": "35f6931b",
+      "source_content": "- If there is a new file in the template, it is created.\n- If a file in the template is identical to your file, it is skipped.\n- If a file is different in your project than the template, you will be prompted; you have options to keep your file or overwrite it with the template version.",
+      "source_content_hash": "716b57e5de123ef6131646c299556e97da55e3126dc151b8cf2fe01dd64625af",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "- 如果模板中有新檔案，則會創建它。\n- 如果模板中的檔案與您的檔案相同，則會跳過。\n- 如果您的專案中的檔案與模板不同，則會提示您；您可以選擇保留您的檔案或使用模板版本覆蓋它。"
+      }
+    },
+    {
+      "segment_id": "c05cce80",
+      "source_content": "> Some upgrades won't be done automatically with the React Native CLI and require manual work, e.g. `0.28` to `0.29`, or `0.56` to `0.57`. Make sure to check the [release notes](https://github.com/facebook/react-native/releases) when upgrading so that you can identify any manual changes your particular project may require.",
+      "source_content_hash": "d0774284953b8e8c630a1b26a1fffb9308204e215808c5a5e69c18bc46e1a5c2",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "> 某些升級無法通過 React Native CLI 自動完成，需要手動操作，例如從 `0.28` 升級到 `0.29`，或從 `0.56` 升級到 `0.57`。升級時請務必檢查 [release notes](https://github.com/facebook/react-native/releases)，以識別您的專案可能需要的手動變更。"
+      }
+    },
+    {
+      "segment_id": "52388877",
+      "source_content": "### Troubleshooting",
+      "source_content_hash": "c6b72ab43705d5ab770a5434716bacabc7df0e102449f7a7dcddecbe28b1d923",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "### 疑難排解"
+      }
+    },
+    {
+      "segment_id": "d422fb13",
+      "source_content": "#### I have done all the changes but my app is still using an old version",
+      "source_content_hash": "135618faa9f2c4d6cfca0d0933fc033a6a8cba17be4a861036cd7e5a65651f28",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "#### 我已完成所有變更，但我的應用程式仍在使用舊版本"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "These sort of errors are usually related to caching, it's recommended to install [react-native-clean-project](https://github.com/pmadruga/react-native-clean-project) to clear all your project's cache and then you can run it again.",
+      "source_content_hash": "e0414f014fb82bf261d3350d14db609164c96b099753572c5f4fbabd767df836",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "這類錯誤通常與快取有關，建議安裝 [react-native-clean-project](https://github.com/pmadruga/react-native-clean-project) 來清除專案的所有快取，然後再次執行。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/version-0.73/upgrading.md",
+  "last_updated_timestamp": "2025-06-19T15:33:39.634074+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "055ba453b9ce98ddd43f300a5bc7a7ae705d46d99dab839ce4ff1aa909d815a0"
+  }
+}

@@ -1,0 +1,193 @@
+# 為你的模組建立函式庫
+
+React Native 擁有豐富的函式庫生態系統來解決常見問題。我們在 [reactnative.directory](https://reactnative.directory) 網站上收集了 React Native 函式庫，這是每位 React Native 開發者都值得收藏的寶貴資源。
+
+有時，你可能會開發一個值得提取為獨立函式庫的模組，以便程式碼重用。這可能是你想在所有應用中重用的函式庫、想作為開源元件分發給生態系統的函式庫，甚至是打算出售的函式庫。
+
+本指南將教你：
+
+- 如何將模組提取為函式庫
+- 如何使用 NPM 分發函式庫
+
+## 將模組提取為函式庫
+
+你可以使用 [`create-react-native-library`](https://callstack.github.io/react-native-builder-bob/create) 工具來建立新函式庫。此工具會設置一個包含所有必要樣板程式碼的新函式庫：所有配置檔案和各平台所需的檔案。它還提供了一個方便的互動式選單，引導你完成函式庫的建立過程。
+
+要將模組提取為獨立函式庫，你可以按照以下步驟操作：
+
+1. 建立新函式庫
+2. 將程式碼從應用移動到函式庫
+3. 更新程式碼以反映新結構
+4. 發布它。
+
+### 1. 建立函式庫
+
+1. 執行以下命令開始建立過程：
+
+```sh
+npx create-react-native-library@latest <Name of Your Library>
+```
+
+2. 為你的模組添加名稱。它必須是有效的 npm 名稱，因此應全部使用小寫字母。你可以使用 `-` 來分隔單詞。
+3. 為套件添加描述。
+4. 繼續填寫表單，直到你看到問題 _"你想開發什麼類型的函式庫？"_
+   ![函式庫類型](/docs/assets/what-library.png)
+5. 在本指南中，選擇 _Turbo module_ 選項。請注意，你可以為新架構和舊架構建立函式庫。
+6. 然後，你可以選擇是否要一個訪問平台（Kotlin 和 Objective-C）的函式庫，或是一個共享的 C++ 函式庫（適用於 Android 和 iOS 的 C++）。
+7. 最後，選擇 `Test App` 作為最後一個選項。此選項會在函式庫資料夾內建立一個已配置好的獨立應用。
+
+互動式提示完成後，工具會建立一個資料夾，其結構在 Visual Studio Code 中看起來像這樣：
+
+<img class="half-size" alt="Folder structure after initializing a new library." src="/docs/assets/turbo-native-modules/c++visualstudiocode.webp" />
+
+你可以自由瀏覽為你建立的程式碼。然而，最重要的部分包括：
+
+- The `android` folder: this is where the Android code lives
+- The `cpp` folder: this is where we the c++ code lives
+- The `ios` folder: this is where we the iOS code lives
+- The `src` folder: this is where the JS code lives.
+
+The `package.json` is already configured with all the information that we provided to the `create-react-native-library` tool, including the name and the description of the package. Notice that the `package.json` is also already configured to run Codegen.
+
+```json
+  "codegenConfig": {
+    "name": "RN<your module name>Spec",
+    "type": "all",
+    "jsSrcsDir": "src",
+    "outputDir": {
+      "ios": "ios/generated",
+      "android": "android/generated"
+    },
+    "android": {
+      "javaPackageName": "com.<name-of-the-module>"
+    }
+  },
+```
+
+最後，函式庫已經包含了所有讓函式庫能與 iOS 和 Android 連結的基礎設施。
+
+### 2. 從你的應用複製程式碼
+
+本指南的其餘部分假設你在應用中有一個本地 Turbo Native Module，是根據網站上其他指南的指示建立的：平台特定的 Turbo Native Modules，或 [跨平台 Turbo Native Modules](./pure-cxx-modules)。但它也適用於元件和舊架構的模組與元件。你需要根據情況調整需要複製和更新的檔案。
+
+<!-- TODO: add links for Turbo Native Modules -->
+
+1. **[Not required for legacy architecture modules and components]** Move the code you have in the `specs` folder in your app into the `src` folder created by the `create-react-native-library` folder.
+2. Update the `index.ts` file to properly export the Turbo Native Module spec so that it is accessible from the library. For example:
+
+```ts
+import NativeSampleModule from './NativeSampleModule';
+
+export default NativeSampleModule;
+```
+
+3. Copy the native module over:
+
+   - Replace the code in the `android/src/main/java/com/<name-of-the-module>` with the code you wrote in the app for your native module, if any.
+   - Replace the code in the `ios` folder with the code you wrote in your app for your native module, if any.
+   - Replace the code in the `cpp` folder with the code you wrote in your app for your native module, if any.
+
+4. **[Not required for legacy architecture modules and components]** Update all the references from the previous spec name to the new spec name, the one that is defined in the `codegenConfig` field of the library's `package.json`. For example, if in the app `package.json` you set `AppSpecs` as `codegenConfig.name` and in the library it is called `RNNativeSampleModuleSpec`, you have to replace every occurrence of `AppSpecs` with `RNNativeSampleModuleSpec`.
+
+完成！您已將所有必要程式碼從應用移至獨立函式庫。
+
+## 測試函式庫
+
+The `create-react-native-library` comes with a useful example application that is already configured to work properly with the library. This is a great way to test it!
+
+查看 `example` 資料夾，其結構與透過 [`react-native-community/template`](https://github.com/react-native-community/template) 建立的 React Native 應用相同。
+
+測試步驟：
+
+1. Navigate to the `example` folder.
+2. Run `yarn install` to install all the dependencies.
+3. For iOS only, you need to install CocoaPods: `cd ios && pod install`.
+4. Build and run Android with `yarn android` from the `example` folder.
+5. Build and run iOS with `yarn ios` from the `example` folder.
+
+## 將函式庫作為本地模組使用
+
+某些情境下，您可能希望直接將函式庫作為本地模組重用於應用中，無需發佈至 NPM。
+
+此時，您的專案結構可能會是函式庫與應用程式並列存放。
+
+```shell
+Development
+├── App
+└── Library
+```
+
+透過 `create-react-native-library` 建立的函式庫仍可在此情境使用。
+
+1. add you library to your app by navigating into the `App` folder and running `yarn add ../Library`.
+2. For iOS only, navigate in the `App/ios` folder and run `bundle exec pod install` to install your dependencies.
+3. Update the `App.tsx` code to import the code in your library. For example:
+
+```tsx
+import NativeSampleModule from '@site/versioned_docs/version-0.76/Library/src/index';
+```
+
+若立即運行應用，Metro 將無法找到需提供給應用的 JS 檔案。這是因為 Metro 會從 `App` 資料夾啟動，無法存取位於 `Library` 資料夾的 JS 檔案。請依以下方式更新 `metro.config.js` 檔案以解決此問題：
+
+```diff
+const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
+
+/**
+ * Metro configuration
+ * https://reactnative.dev/docs/metro
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
++ const path = require('path');
+
+- const config = {}
++ const config = {
++  // Make Metro able to resolve required external dependencies
++  watchFolders: [
++    path.resolve(__dirname, '../Library'),
++  ],
++  resolver: {
++    extraNodeModules: {
++      'react-native': path.resolve(__dirname, 'node_modules/react-native'),
++    },
++  },
++};
+
+module.exports = mergeConfig(getDefaultConfig(__dirname), config);
+```
+
+The `watchFolders` configs tells Metro to watch for files and changes in some additional paths, in this case to the `../Library` path, which contains the `src/index` file you need.
+The `resolver`property is required to feed to the library the React Native code used by the app. The library might refer and import code from React Native: without the additional resolver, the imports in the library will fail.
+
+至此，您可如常建置並運行應用：
+
+- Build and run Android with `yarn android` from the `example` folder.
+- Build and run iOS with `yarn ios` from the `example` folder.
+
+## 將函式庫發佈至 NPM
+
+由於 `create-react-native-library` 已預先配置好發佈流程，因此您可以直接將函式庫發佈至 NPM。
+
+1. 在您的模組中安裝相依套件：執行 `yarn install`。
+2. 建置函式庫：執行 `yarn prepare`。
+3. 發佈函式庫：執行 `yarn release`。
+
+稍等片刻後，您的函式庫就會出現在 NPM 上。您可以執行以下指令來驗證：
+
+```bash
+npm view <package.name>
+```
+
+where `package.name` is the `name` you set up in the `package.json` file during the initialization of the library.
+
+現在，您可以透過執行以下指令將函式庫安裝至您的應用程式中：
+
+```bash
+yarn add <package.name>
+```
+
+:::note
+僅限 iOS：每當您安裝包含原生程式碼的新模組時，都必須重新安裝 CocoaPods，建議執行 `bundle exec pod install`（推薦使用 Ruby 的 Bundler）或 `pod install`（不推薦）。
+:::
+
+恭喜！您已成功發佈第一個 React Native 函式庫。

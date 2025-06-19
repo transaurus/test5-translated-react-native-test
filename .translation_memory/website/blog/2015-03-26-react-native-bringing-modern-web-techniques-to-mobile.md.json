@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2015-03-26-react-native-bringing-modern-web-techniques-to-mobile.md",
+  "source_file_content_hash": "2695977eb8f310730df35d7f72daa47734e8467ae6b3af4a428d2f6e7d9f54ea",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\ntitle: 'React Native: Bringing modern web techniques to mobile'\nauthor: Tom Occhino\nauthorTitle: Engineering Manager at Facebook\nauthorURL: 'https://github.com/tomocchino'\nauthorImageURL: 'https://avatars0.githubusercontent.com/u/13947?v=3&s=460'\nauthorTwitter: tomocchino\nhero: '/blog/assets/dark-hero.png'\ntags: [announcement]\n---",
+      "source_content_hash": "6550d239224dea4669b55af30ffb6f925ef2402402adf88d473011b11e80dcbf",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "We introduced [React](https://code.facebook.com/projects/176988925806765/react/) to the world two years ago, and since then it's seen impressive growth, both inside and outside of Facebook. Today, even though no one is forced to use it, new web projects at Facebook are commonly built using React in one form or another, and it's being broadly adopted across the industry. Engineers are choosing to use React every day because it enables them to spend more time focusing on their products and less time fighting with their framework. It wasn't until we'd been building with React for a while, though, that we started to understand what makes it so powerful.",
+      "source_content_hash": "5fad39a20d0eedbbd8d7f6113cc27930d5c30add7ea470cc99567a0b5199b207",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "我們在兩年前向世界推出了 [React](https://code.facebook.com/projects/176988925806765/react/)，此後無論在 Facebook 內外都見證了其驚人的成長。時至今日，即使沒有人被強制使用它，Facebook 內部的新網頁專案普遍都會以某種形式採用 React，且它也在業界被廣泛採納。工程師們每天選擇使用 React，因為它讓他們能將更多時間專注於產品本身，而非與框架搏鬥。然而，直到我們使用 React 開發一段時間後，才真正理解其強大之處。"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "React forces us to break our applications down into discrete components, each representing a single view. These components make it easier to iterate on our products, since we don't need to keep the entire system in our head in order to make changes to one part of it. More important, though, React wraps the DOM's mutative, imperative API with a declarative one, which raises the level of abstraction and simplifies the programming model. What we've found is that when we build with React, our code is a lot more predictable. This predictability makes it so we can iterate more quickly with confidence, and our applications are a lot more reliable as a result. Additionally, it's not only easier to scale our applications when they're built with React, but we've found it's also easier to scale the size of our teams themselves.",
+      "source_content_hash": "02f72a9908fe258eacb8557232b3b2d3b7d456166949b0f1070d5b35a0fab238",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "React 迫使我們將應用程式分解為獨立的元件，每個元件代表單一視圖。這些元件使產品迭代更加容易，因為我們無需在腦海中維持整個系統的運作就能修改其中一部分。但更重要的是，React 用宣告式的 API 封裝了 DOM 的變動性、命令式 API，從而提升抽象層級並簡化編程模型。我們發現，當使用 React 構建時，程式碼變得更加可預測。這種可預測性讓我們能更有信心地快速迭代，最終使應用程式更加可靠。此外，不僅應用程式的擴展變得更容易，我們還發現團隊規模的擴展也因此更加順暢。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Together with the rapid iteration cycle of the web, we've been able to build some awesome products with React, including many components of Facebook.com. Additionally, we've built amazing frameworks in JavaScript on top of React, like [Relay](https://reactjs.org/blog/2015/02/20/introducing-relay-and-graphql.html), which allows us to greatly simplify our data fetching at scale. Of course, web is only part of the story. Facebook also has widely used Android and iOS apps, which are built on top of disjointed, proprietary technology stacks. Having to build our apps on top of multiple platforms has bifurcated our engineering organization, but that's only one of the things that makes native mobile application development hard.",
+      "source_content_hash": "27fdd5d8cfe057d70a324bdb1ac950931e1e2bb51bce809f41b810aae1c3fd2d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "結合網頁的快速迭代週期，我們已用 React 打造出許多出色的產品，包括 Facebook.com 的眾多元件。同時，我們也在 React 基礎上構建了強大的 JavaScript 框架，例如 [Relay](https://reactjs.org/blog/2015/02/20/introducing-relay-and-graphql.html)，它能大幅簡化大規模數據獲取的流程。當然，網頁只是故事的一部分。Facebook 還擁有廣泛使用的 Android 和 iOS 應用程式，它們建立在各自獨立、專有的技術堆疊上。必須在多平台基礎上構建應用程式，不僅使我們的工程組織分化，這也只是原生移動應用開發困難的其中一個面向。"
+      }
+    },
+    {
+      "segment_id": "21c93b79",
+      "source_content": "<footer>\n  <a\n    href=\"https://code.facebook.com/posts/1014532261909640/react-native-bringing-modern-web-techniques-to-mobile/\"\n    className=\"btn\">Read more</a>\n</footer>",
+      "source_content_hash": "5787e5a3562467cfb226dca79895aed09fc79df7ff46da47b373a8768f762dd9",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "zh-hant": "@@untranslatable_placeholder_21c93b79"
+      }
+    },
+    {
+      "segment_id": "b842ee7c",
+      "source_content": "> This is an excerpt. Read the rest of the post on [Facebook Code](https://code.facebook.com/posts/1014532261909640/react-native-bringing-modern-web-techniques-to-mobile/).",
+      "source_content_hash": "c78e6df0c75a614daceb963aea170e3b78ae73c127d64acadd898c9e23fceaf0",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "zh-hant": "> 此為節錄內容。完整文章請見 [Facebook Code](https://code.facebook.com/posts/1014532261909640/react-native-bringing-modern-web-techniques-to-mobile/)。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2015-03-26-react-native-bringing-modern-web-techniques-to-mobile.md",
+  "last_updated_timestamp": "2025-06-19T15:33:15.419624+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "zh-hant": "2695977eb8f310730df35d7f72daa47734e8467ae6b3af4a428d2f6e7d9f54ea"
+  }
+}
